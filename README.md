@@ -43,11 +43,11 @@ DETAILS DETAIL DETAILS
 .
 DETAILS DETAIL DETAILS
 
-### Relative distributions of barcode hits:
+### Relative distributions of barcode hits
 **Before:**
 
-![Relative barcode distributions before running HTbfRs](example_images/Barplot_unsplit.png)
+<img src="example_images/Barplot_unsplit.png" width="75%">
 
 **After:**
 
-![Relative barcode distributions after running HTbfRs](example_images/Barplot_split.png)
+<img src="example_images/Barplot_split.png" width="75%">
