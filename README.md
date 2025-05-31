@@ -32,6 +32,14 @@ DETAILS DETAIL DETAILS
 
 ## Usage
 ### Data prerequisites
+As with the previous version of this tool, the number of reads processed at any one time is the biggest bottleneck. We highly recomend splitting the input data prior to running this tool. 
+The optimal number of reads to split into will depend on the length of reads and computer being used, however during testing 25,000 reads (100,000 lines for fastq) was found to work well.
+
+In linux data can be split using 
+```
+split -l 100000 data.fastq data.split.
+```
+
 ### Commandline arguments
 ### Output
 
