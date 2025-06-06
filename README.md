@@ -9,7 +9,7 @@ DETAILS DETAIL DETAILS
 
 ## Dependencies
 - [SeqKit](https://bioinf.shenwei.me/seqkit/)
-- [BLAST+ execitables](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html)
+- [BLAST+ executables](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html)
   - blastn
   - makeblastdb[^1]
 - Python >= 3.11
