@@ -1,11 +1,7 @@
 # HTbfRs2
 "Hacked together but funcitonal read splitter" - A script to split highly concatenated reads from oxford nanopore sequencing.
 
-DETAILS DETAIL DETAILS
-.
-.
-.
-DETAILS DETAIL DETAILS
+This script is an updated version of [splitReads.py](https://github.com/HaydenRJones/splitReads). It works in much the same way -- identifying barcode regions from the [PCR barcoding kits](https://nanoporetech.com/document/chemistry-technical-document#barcode-sequences) using blastn, and spliting reads based on the number and position of hits.
 
 ## Dependencies
 - [SeqKit](https://bioinf.shenwei.me/seqkit/)
@@ -51,11 +47,14 @@ The optimal number of reads to split into will depend on the length of reads and
 
 ## Examples
 
-DETAILS DETAIL DETAILS
-.
-.
-.
-DETAILS DETAIL DETAILS
+### small_example.fastq: ###
+### Read stats comparison ###
+|  |Before |After |
+|-----|-----|-----|
+|num_seqs|1,000|2,382|
+|min_len|86|8|
+|max_len|28,913|15,199|
+|avg_len|2,537|712|
 
 ### Relative distributions of barcode hits
 **Before:**
