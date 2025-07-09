@@ -32,15 +32,21 @@ DETAILS DETAIL DETAILS
 
 ## Usage
 ### Data prerequisites
-As with the previous version of this tool, the number of reads processed at any one time is the biggest bottleneck. We highly recomend splitting the input data prior to running this tool. 
-The optimal number of reads to split into will depend on the length of reads and computer being used, however during testing 25,000 reads (100,000 lines for fastq) was found to work well.
+As with the previous version of this tool, the number of reads processed at any one time is the biggest bottleneck. This tool tries to circumvent this by automatically splitting data files prior to analysis.
+The optimal number of reads to split into will depend on the length of reads and computer being used, however during testing 25,000 reads (100,000 lines for fastq) was found to work well and is set as the default.
 
-In linux data can be split using 
-```
-split -l 100000 data.fastq data.split.
-```
+### Command line arguments
 
-### Commandline arguments
+- `-s, --sample` : the fastq sample to processes
+
+- `-o, --output` : the directory to save results to. Defaults to ./output/
+
+- `-B, --blastn_path` : the directory to the blastn executable, if not in $PATH
+
+- `-N, --split_number` : how many reads to split the data file into. Defaults to 25,000
+
+- `-t, --threads` : how many threads to use. Used for blastn and the final splitting step. Default is 4.
+
 ### Output
 
 ## Examples
