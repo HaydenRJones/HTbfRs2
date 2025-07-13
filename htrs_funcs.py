@@ -6,6 +6,7 @@ import subprocess
 import pandas as pd
 from Bio import SeqIO
 from collections import defaultdict
+import os
 
 # def setup_dir(target_dir):
 
@@ -28,11 +29,11 @@ def blast(blastn_path, database, target, word_size, num_threads):
     
     # Command to run blast, and a header to append to the output tsv file. 
     # We probably don't need to do this but it makes it a bit easier to parse later
-    command = f'{blastn_path} -db {database} -query {target} -word_size {word_size} -num_threads {num_threads} -out {target}.out -outfmt "6 qseqid sseqid qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore"'
-    header = 'qseqid	sseqid	qlen	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore'
+    command = f'{blastn_path} -db {os.path.dirname(os.path.realpath(__file__))}/{database} -query {target} -word_size {word_size} -num_threads {num_threads} -out {target}.out -outfmt "6 qseqid sseqid qlen pident length mismatch gapopen qstart qend sstart send evalue bitscore"'
+    #header = 'qseqid	sseqid	qlen	pident	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore'
     
     subprocess.run(command, shell = True)
-    subprocess.run(f'cat header {target}.out > {target}.tsv', shell = True)
+    subprocess.run(f'cat {os.path.dirname(os.path.realpath(__file__))}/header {target}.out > {target}.tsv', shell = True)
     
 def split_reads(target):
     cutoff = 18
