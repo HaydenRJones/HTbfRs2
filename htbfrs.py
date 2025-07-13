@@ -39,14 +39,17 @@ if __name__ == '__main__':
     
     parser.add_argument('-N', '--split_number', 
                     help = 'How many reads for breaking up the data.\nDefault value is 25,000',
+                    type = int,
                     default = 25000)
     
     parser.add_argument('-t', '--threads', 
                     help = 'Number of threads to use for BLAST searches.\nDefault value is 4',
+                    type = int,
                     default = 4)
     
     parser.add_argument('-W', '--word_size', 
                     help = 'The word size to use for BLAST searches\nDefault value is 10',
+                    type = int,
                     default = 10)
     
     args = parser.parse_args()
