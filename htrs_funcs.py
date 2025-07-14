@@ -74,14 +74,13 @@ def split_reads(target):
                 splits.append(hits[i][hits[i][2:].index(min(hits[i][2:]))])
             
             splits.sort()
-            # Cant remember what this was for so just going to remove it for now...
-            #regions = [0] + splits + [len(seq)]
             
             # Go pair by pair through splits, and use those values to break up the read.
             # Saving it to our string as we go
-            for i in range(len(splits) - 1): # this was (0, len(splits) - 1), so hopefully it wont break?
+            regions = [0] + splits + [len(seq)]
+            for i in range(len(regions) - 1): 
                 
-                span = [splits[i], splits[i + 1]]
+                span = [regions[i], regions[i + 1]]
                 
                 newName = f'{name}_{i}'
                 newSeq  = f'{seq[span[0]:span[1]]}'
